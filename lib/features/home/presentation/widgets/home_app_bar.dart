@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../core/utils/theme/app_colors.dart';
 
@@ -20,16 +21,15 @@ class HomeAppBar extends StatelessWidget {
             // Progress Section (Middle)
             _buildProgressSection(),
             const SizedBox(width: 12),
-            // Notification Icon (Left in LTR, first in code for RTL display on right)
             _buildIconButton(
-              icon: Icons.search,
+              imagePath: 'assets/icons/search-normal.svg',
               onTap: () {
                 // Handle search tap
               },
             ),
-            _buildNotificationIcon(),
             const SizedBox(width: 8),
-
+            // Notification Icon (Left in LTR, first in code for RTL display on right)
+            _buildNotificationIcon(),
             // Search Icon
             const SizedBox(width: 12),
           ],
@@ -49,15 +49,26 @@ class HomeAppBar extends StatelessWidget {
           },
         ),
         Positioned(
-          top: 6,
-          right: 6,
+          top: -2,
+          right: -2,
           child: Container(
-            width: 8,
-            height: 8,
+            width: 18,
+            height: 18,
             decoration: BoxDecoration(
-              color: AppColors.primary,
+              color: AppColors.red,
               shape: BoxShape.circle,
               border: Border.all(color: Colors.white, width: 1.5),
+            ),
+            child: const Center(
+              child: Text(
+                '3',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  height: 1.0,
+                ),
+              ),
             ),
           ),
         ),
@@ -66,7 +77,8 @@ class HomeAppBar extends StatelessWidget {
   }
 
   Widget _buildIconButton({
-    required IconData icon,
+    IconData? icon,
+    String? imagePath,
     required VoidCallback onTap,
   }) {
     return InkWell(
@@ -75,6 +87,7 @@ class HomeAppBar extends StatelessWidget {
       child: Container(
         width: 40,
         height: 40,
+        padding: imagePath != null ? const EdgeInsets.all(10) : null,
         decoration: BoxDecoration(
           color: Colors.white,
           shape: BoxShape.circle,
@@ -86,54 +99,65 @@ class HomeAppBar extends StatelessWidget {
             ),
           ],
         ),
-        child: SvgPicture.asset(
-          'assets/icons/search-normal.svg',
-          colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-          width: 22,
-          height: 22,
-        ),
+        child: imagePath != null
+            ? SvgPicture.asset(
+                imagePath,
+                colorFilter: const ColorFilter.mode(
+                  AppColors.primary,
+                  BlendMode.srcIn,
+                ),
+              )
+            : Icon(icon, color: AppColors.primary, size: 22),
       ),
     );
   }
 
   Widget _buildProfileAvatar() {
     return SizedBox(
-      width: 58,
-      height: 58,
+      width: 50,
+      height: 50,
       child: Stack(
+        clipBehavior: Clip.none,
         alignment: Alignment.center,
         children: [
-          // Gradient Border
+          // Circular Progress Ring
+          SizedBox(
+            width: 50,
+            height: 50,
+            child: Transform.rotate(
+              angle: -3.14 / 2, // Start from top
+              child: CircularProgressIndicator(
+                value: 0.7,
+                strokeWidth: 4,
+                backgroundColor: AppColors.lightGray.withValues(alpha: 0.5),
+                valueColor: const AlwaysStoppedAnimation<Color>(
+                  AppColors.primary,
+                ),
+                strokeCap: StrokeCap.round,
+              ),
+            ),
+          ),
+          // Profile Image Container (Centered)
           Container(
-            width: 54,
-            height: 54,
+            width: 38,
+            height: 38,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              gradient: AppColors.primaryGradient,
+              color: Colors.grey[200],
             ),
-            padding: const EdgeInsets.all(2), // Border width
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-              ),
-              child: ClipOval(
-                child: Icon(
-                  Icons.person,
-                  color: AppColors.primary.withOpacity(0.6),
-                  size: 28,
-                ),
-              ),
+            child: ClipOval(
+              child: Icon(Icons.person, color: Colors.grey[400], size: 24),
             ),
           ),
           // Level Badge
           Positioned(
-            bottom: 0,
+            bottom: -6,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
                 gradient: AppColors.primaryGradient,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.white, width: 1.5),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.2),
@@ -141,13 +165,12 @@ class HomeAppBar extends StatelessWidget {
                     offset: const Offset(0, 2),
                   ),
                 ],
-                border: Border.all(color: Colors.white, width: 1.5),
               ),
               child: const Text(
                 'Lv. 5',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 10,
+                  fontSize: 9,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Cairo',
                 ),

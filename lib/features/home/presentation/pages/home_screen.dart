@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                   ), // Space for BottomNavBar
                   child: Column(
                     children: [
-                      const SizedBox(height: 16),
+                      const SizedBox(height: 2),
                       const HeroJourneyCard(),
                       const SizedBox(height: 24),
                       const MapTrackingCard(),
