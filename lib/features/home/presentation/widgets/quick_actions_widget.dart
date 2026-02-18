@@ -18,6 +18,9 @@ class QuickActionsWidget extends StatelessWidget {
             imagePath: 'assets/images/subjects-icon.png',
             label: "المواد",
             context: context,
+            onTap: () {
+              Navigator.pushNamed(context, '/subjects');
+            },
           ),
           _buildActionItem(
             imagePath: 'assets/images/homework-icon.png',
@@ -43,28 +46,32 @@ class QuickActionsWidget extends StatelessWidget {
     required String imagePath,
     required String label,
     required BuildContext context,
+    VoidCallback? onTap,
   }) {
     return Column(
       children: [
-        Container(
-          width: 75,
-          height: 75,
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            gradient: AppColors.primaryGradient,
-            shape: BoxShape.circle,
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.primary.withValues(alpha: 0.3),
-                blurRadius: 8,
-                offset: const Offset(0, 4),
-              ),
-            ],
-          ),
-          child: Image.asset(
-            imagePath,
-            color: Colors.white,
-            fit: BoxFit.contain,
+        GestureDetector(
+          onTap: onTap,
+          child: Container(
+            width: 75,
+            height: 75,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              gradient: AppColors.primaryGradient,
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.primary.withValues(alpha: 0.3),
+                  blurRadius: 8,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Image.asset(
+              imagePath,
+              color: Colors.white,
+              fit: BoxFit.contain,
+            ),
           ),
         ),
         const SizedBox(height: 8),
