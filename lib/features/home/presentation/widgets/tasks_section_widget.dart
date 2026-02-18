@@ -199,15 +199,67 @@ class TasksSectionWidget extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 16),
-          // Thick Divider
-          Container(
-            height: 4,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: const Color(0xFF006D82), // Teal color
-              borderRadius: BorderRadius.circular(2),
-            ),
+          const SizedBox(height: 4),
+          // Progress Section with Percentage
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Percentage Text
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'التقدم',
+                    style: getMediumStyle(
+                      fontFamily: FontConstant.cairo,
+                      fontSize: 12,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 2,
+                    ),
+                    decoration: BoxDecoration(
+                      gradient: AppColors.primaryGradient,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      '${(isCompleted ? 100 : 60)}%',
+                      style: getBoldStyle(
+                        fontFamily: FontConstant.cairo,
+                        fontSize: 12,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              // Progress Bar with Gradient
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  height: 8,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: AppColors.lightGray,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                  child: FractionallySizedBox(
+                    alignment: Alignment.centerRight,
+                    widthFactor: isCompleted ? 1.0 : 0.6,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: AppColors.primaryGradient,
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 16),
           // Bottom Row

@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
               Expanded(
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.only(
-                    bottom: 100,
+                    bottom: 125,
                   ), // Space for BottomNavBar
                   child: Column(
                     children: [
