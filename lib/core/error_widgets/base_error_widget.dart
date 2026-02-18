@@ -1,7 +1,6 @@
 import 'package:student_app/generated/app_localizations.dart';
 import 'package:student_app/core/utils/common/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:student_app/core/utils/common/custom_button.dart';
 
 class BaseErrorWidget extends StatelessWidget {
   final String title;

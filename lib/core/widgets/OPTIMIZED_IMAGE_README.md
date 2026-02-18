@@ -175,8 +175,8 @@ OptimizedImage(
   imageUrl: property.primaryImage,
   width: 200,
   height: 150,
-  shimmerBaseColor: AppColors.primary.withOpacity(0.1),
-  shimmerHighlightColor: AppColors.primary.withOpacity(0.3),
+  shimmerBaseColor: AppColors.primary.withValues(alpha:0.1),
+  shimmerHighlightColor: AppColors.primary.withValues(alpha:0.3),
 )
 ```
 
@@ -305,8 +305,8 @@ OptimizedImage(
 ```dart
 OptimizedImage(
   imageUrl: url,
-  shimmerBaseColor: AppColors.primary.withOpacity(0.1),
-  shimmerHighlightColor: AppColors.primary.withOpacity(0.3),
+  shimmerBaseColor: AppColors.primary.withValues(alpha:0.1),
+  shimmerHighlightColor: AppColors.primary.withValues(alpha:0.3),
 )
 ```
 

@@ -45,7 +45,7 @@ class _SubjectCardState extends State<SubjectCard> {
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
               BoxShadow(
-                color: widget.subject.color.withOpacity(0.1),
+                color: widget.subject.color.withValues(alpha:0.1),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
               ),
@@ -91,7 +91,7 @@ class _SubjectCardState extends State<SubjectCard> {
                       '${widget.subject.lessonsCount} ديسمبر',
                       style: TextStyle(
                         fontSize: 12,
-                        color: widget.subject.color.withOpacity(0.7),
+                        color: widget.subject.color.withValues(alpha:0.7),
                       ),
                     ),
                   ],
@@ -122,7 +122,7 @@ class _SubjectCardState extends State<SubjectCard> {
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
               BoxShadow(
-                color: widget.subject.color.withOpacity(0.1),
+                color: widget.subject.color.withValues(alpha:0.1),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
               ),
@@ -162,7 +162,7 @@ class _SubjectCardState extends State<SubjectCard> {
                             '${widget.subject.lessonsCount} ديسمبر',
                             style: TextStyle(
                               fontSize: 12,
-                              color: widget.subject.color.withOpacity(0.7),
+                              color: widget.subject.color.withValues(alpha:0.7),
                             ),
                           ),
                         ],
@@ -187,7 +187,7 @@ class _SubjectCardState extends State<SubjectCard> {
       padding: const EdgeInsets.all(4),
       child: Icon(
         Icons.more_vert,
-        color: widget.subject.color.withOpacity(0.5),
+        color: widget.subject.color.withValues(alpha:0.5),
         size: 25,
       ),
     );

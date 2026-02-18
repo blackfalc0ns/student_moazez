@@ -68,7 +68,7 @@ class CustomButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        if (prefix != null) prefix!,
+        ?prefix,
         SizedBox(width: 4),
         Text(
           text,
@@ -79,7 +79,7 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         SizedBox(width: 4),
-        if (suffix != null) suffix!,
+        ?suffix,
       ],
     );
   }
