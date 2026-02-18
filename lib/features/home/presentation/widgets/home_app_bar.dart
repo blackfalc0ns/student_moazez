@@ -205,20 +205,33 @@ class HomeAppBar extends StatelessWidget {
                 text: const TextSpan(
                   style: TextStyle(fontFamily: 'Cairo', fontSize: 12),
                   children: [
+                      TextSpan(
+                      text: '1500 ',
+                      style: TextStyle(
+                        color: AppColors.textLight70,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                     TextSpan(
-                      text: '3000',
+                      text: '/',
+                      style: TextStyle(
+                        color: AppColors.textLight70,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ' 3000',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: AppColors.primary,
                       ),
                     ),
                     TextSpan(
-                      text: ' / 1500 XP',
+                      text: ' XP',
                       style: TextStyle(
                         color: AppColors.textLight70,
-                        fontWeight: FontWeight.w500,
                       ),
                     ),
+                  
                   ],
                 ),
               ),
