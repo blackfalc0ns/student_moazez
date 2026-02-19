@@ -6,6 +6,7 @@ class SubjectModel {
   final int lessonsCount;
   final Color color;
   final Color backgroundColor;
+  final IconData? icon;
 
   SubjectModel({
     required this.id,
@@ -13,5 +14,6 @@ class SubjectModel {
     required this.lessonsCount,
     required this.color,
     required this.backgroundColor,
+    this.icon,
   });
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../../../core/utils/theme/app_colors.dart';
 import '../widgets/subjects_app_bar.dart';
 import '../widgets/subjects_grid_view.dart';
 import '../widgets/subjects_list_view.dart';
@@ -19,57 +21,65 @@ class _SubjectsScreenState extends State<SubjectsScreen> {
       id: '1',
       name: 'الرياضيات',
       lessonsCount: 20,
-      color: const Color(0xFF4A6FA5),
-      backgroundColor: const Color(0xFFE8EDF5),
+      color: AppColors.primary,
+      backgroundColor: AppColors.primary.withOpacity(0.1),
+      icon: FontAwesomeIcons.calculator,
     ),
     SubjectModel(
       id: '2',
       name: 'الفيزياء',
       lessonsCount: 14,
-      color: const Color(0xFFD4A574),
-      backgroundColor: const Color(0xFFFFF8E8),
+      color: AppColors.secondary,
+      backgroundColor: AppColors.secondary.withOpacity(0.1),
+      icon: FontAwesomeIcons.atom,
     ),
     SubjectModel(
       id: '3',
       name: 'اللغة العربية',
       lessonsCount: 22,
-      color: const Color(0xFFD85D5D),
-      backgroundColor: const Color(0xFFFFF0F0),
+      color: AppColors.deepOrange,
+      backgroundColor: AppColors.deepOrange.withOpacity(0.1),
+      icon: FontAwesomeIcons.language,
     ),
     SubjectModel(
       id: '4',
       name: 'الكيمياء',
       lessonsCount: 14,
-      color: const Color(0xFF2D9B9B),
-      backgroundColor: const Color(0xFFE8F5F5),
+      color: AppColors.info,
+      backgroundColor: AppColors.info.withOpacity(0.1),
+      icon: FontAwesomeIcons.flask,
     ),
     SubjectModel(
       id: '5',
       name: 'الفقه',
       lessonsCount: 25,
-      color: const Color(0xFF4A6FA5),
-      backgroundColor: const Color(0xFFE8EDF5),
+      color: AppColors.softGreen,
+      backgroundColor: AppColors.softGreen.withOpacity(0.1),
+      icon: FontAwesomeIcons.scaleBalanced,
     ),
     SubjectModel(
       id: '6',
       name: 'التوحيد',
       lessonsCount: 15,
-      color: const Color(0xFFD4A574),
-      backgroundColor: const Color(0xFFFFF8E8),
+      color: AppColors.primaryDeep,
+      backgroundColor: AppColors.primaryDeep.withOpacity(0.1),
+      icon: FontAwesomeIcons.mosque,
     ),
     SubjectModel(
       id: '7',
       name: 'القرآن',
       lessonsCount: 22,
-      color: const Color(0xFFD85D5D),
-      backgroundColor: const Color(0xFFFFF0F0),
+      color: AppColors.green,
+      backgroundColor: AppColors.green.withOpacity(0.1),
+      icon: FontAwesomeIcons.bookQuran,
     ),
     SubjectModel(
       id: '8',
       name: 'التفسير',
       lessonsCount: 14,
-      color: const Color(0xFF2D9B9B),
-      backgroundColor: const Color(0xFFE8F5F5),
+      color: AppColors.warning,
+      backgroundColor: AppColors.warning.withOpacity(0.1),
+      icon: FontAwesomeIcons.bookOpen,
     ),
   ];
 

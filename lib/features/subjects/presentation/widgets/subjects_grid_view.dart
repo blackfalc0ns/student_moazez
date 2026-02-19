@@ -5,10 +5,7 @@ import 'subject_card.dart';
 class SubjectsGridView extends StatelessWidget {
   final List<SubjectModel> subjects;
 
-  const SubjectsGridView({
-    super.key,
-    required this.subjects,
-  });
+  const SubjectsGridView({super.key, required this.subjects});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +15,7 @@ class SubjectsGridView extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 12,
         mainAxisSpacing: 12,
-        childAspectRatio: 1.1,
+        childAspectRatio: 1.0,
       ),
       itemCount: subjects.length,
       itemBuilder: (context, index) {
@@ -31,16 +28,10 @@ class SubjectsGridView extends StatelessWidget {
             final clampedValue = value.clamp(0.0, 1.0);
             return Transform.scale(
               scale: clampedValue,
-              child: Opacity(
-                opacity: clampedValue,
-                child: child,
-              ),
+              child: Opacity(opacity: clampedValue, child: child),
             );
           },
-          child: SubjectCard(
-            subject: subjects[index],
-            isGridView: true,
-          ),
+          child: SubjectCard(subject: subjects[index], isGridView: true),
         );
       },
     );
