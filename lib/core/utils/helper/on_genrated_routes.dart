@@ -3,12 +3,14 @@ import '../../../features/home/presentation/pages/home_screen.dart';
 import '../../../features/subjects/presentation/pages/subjects_screen.dart';
 import '../../../features/homeworks/presentation/pages/homeworks_screen.dart';
 import '../../../features/behavior/presentation/pages/behavior_screen.dart';
+import '../../../features/grades/presentation/pages/grades_screen.dart';
 
 class Routes {
   static const String home = '/';
   static const String subjects = '/subjects';
   static const String homeworks = '/homeworks';
   static const String behavior = '/behavior';
+  static const String grades = '/grades';
 }
 
 class OnGeneratedRoutes {
@@ -35,6 +37,12 @@ class OnGeneratedRoutes {
       case Routes.behavior:
         return MaterialPageRoute(
           builder: (_) => const BehaviorScreen(),
+          settings: settings,
+        );
+
+      case Routes.grades:
+        return MaterialPageRoute(
+          builder: (_) => const GradesScreen(),
           settings: settings,
         );
 

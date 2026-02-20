@@ -42,6 +42,9 @@ class QuickActionsWidget extends StatelessWidget {
             imagePath: 'assets/images/grades-icon.png',
             label: "الدرجات",
             context: context,
+            onTap: () {
+              Navigator.pushNamed(context, '/grades');
+            },
           ),
         ],
       ),
