@@ -34,6 +34,9 @@ class QuickActionsWidget extends StatelessWidget {
             imagePath: 'assets/images/behavior-icon.png',
             label: "السلوك",
             context: context,
+            onTap: () {
+              Navigator.pushNamed(context, '/behavior');
+            },
           ),
           _buildActionItem(
             imagePath: 'assets/images/grades-icon.png',

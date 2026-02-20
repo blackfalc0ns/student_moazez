@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import '../../../features/home/presentation/pages/home_screen.dart';
 import '../../../features/subjects/presentation/pages/subjects_screen.dart';
 import '../../../features/homeworks/presentation/pages/homeworks_screen.dart';
+import '../../../features/behavior/presentation/pages/behavior_screen.dart';
 
 class Routes {
   static const String home = '/';
   static const String subjects = '/subjects';
   static const String homeworks = '/homeworks';
+  static const String behavior = '/behavior';
 }
 
 class OnGeneratedRoutes {
@@ -27,6 +29,12 @@ class OnGeneratedRoutes {
       case Routes.homeworks:
         return MaterialPageRoute(
           builder: (_) => const HomeworksScreen(),
+          settings: settings,
+        );
+
+      case Routes.behavior:
+        return MaterialPageRoute(
+          builder: (_) => const BehaviorScreen(),
           settings: settings,
         );
 
