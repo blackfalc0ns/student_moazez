@@ -26,6 +26,9 @@ class QuickActionsWidget extends StatelessWidget {
             imagePath: 'assets/images/homework-icon.png',
             label: "الواجبات",
             context: context,
+            onTap: () {
+              Navigator.pushNamed(context, '/homeworks');
+            },
           ),
           _buildActionItem(
             imagePath: 'assets/images/behavior-icon.png',
